@@ -47,6 +47,7 @@
   let enabled;
   let settingsRequest = 0;
   let pendingDialog;
+  let pasteAllowedUntil = 0;
   let unlockSession;
   let eventRoot;
   let unlockDeadline = Infinity;
@@ -69,6 +70,7 @@
     if (!unlockedEditor) return;
 
     unlockSession.abort();
+    clearPastePermission();
     unlockSession = undefined;
     if (pendingDialog?.dataset.gobakuConfirm === 'paste') pendingDialog.close();
     unlockedEditor.removeAttribute('data-gobaku-unlocked');
@@ -129,6 +131,7 @@
   }
 
   function trackChatInput(event) {
+    if (event.type === 'focusout' && unlockedEditor?.contains(event.target)) clearPastePermission();
     if (!event.isTrusted || !countdownText || !unlockedEditor.contains(event.target)) return;
 
     checkLockState();
@@ -299,13 +302,19 @@
     }
   }
 
+  function clearPastePermission() {
+    pasteAllowedUntil = 0;
+  }
+
   async function confirmChatPaste(event, editor) {
+    if (event.isTrusted && !pendingDialog && performance.now() < pasteAllowedUntil) {
+      clearPastePermission();
+      return;
+    }
+
     event.preventDefault();
     event.stopImmediatePropagation();
     if (!event.isTrusted || pendingDialog) return;
-
-    const text = event.clipboardData?.getData('text/plain');
-    if (!text) return;
 
     const signal = unlockSession.signal;
     const textField = editor.matches('input, textarea');
@@ -314,10 +323,9 @@
     const start = textField ? editor.selectionStart : null;
     const end = textField ? editor.selectionEnd : null;
     const agreed = await requestConfirmation('paste');
+    checkLockState();
     if (signal.aborted || !editor.isConnected || !editor.matches(editorSelector)) return;
 
-    checkLockState();
-    if (signal.aborted) return;
     editor.focus();
     if (document.activeElement !== editor) return;
     if (start !== null && end !== null) {
@@ -326,7 +334,7 @@
       selection.removeAllRanges();
       selection.addRange(range);
     }
-    if (agreed && !signal.aborted) document.execCommand('insertText', false, text);
+    if (agreed) pasteAllowedUntil = performance.now() + 10000;
   }
 
   function guardChatEnter(event, editor) {
@@ -360,6 +368,10 @@
     if (!lockedEditor && !lockedSend && !lockedForm) {
       if (editor && editor === unlockedEditor) {
         if (event.type === 'paste' && settings.confirmPaste) confirmChatPaste(event, editor);
+        if (settings.confirmPaste && (event.type === 'drop' || event.inputType === 'insertFromDrop')) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+        }
         if (event instanceof KeyboardEvent && settings.guardEnter) guardChatEnter(event, editor);
       }
       return;
@@ -380,6 +392,7 @@
     if (eventRoot === document.documentElement) return;
     eventRoot = document.documentElement;
     window.addEventListener('focus', checkLockState);
+    window.addEventListener('blur', clearPastePermission);
     window.addEventListener('pagehide', onPageHide);
     window.addEventListener('popstate', checkLockState);
     for (const type of ['input', 'compositionstart', 'compositionend', 'focusout']) {
@@ -401,7 +414,7 @@
 
   function applySettings(next) {
     if (!isValidUnlockTime(next.unlockSeconds)) next.unlockSeconds = defaultSettings.unlockSeconds;
-    const nextEnabled = next[siteKey];
+    const nextEnabled = next.enabled !== false && next[siteKey];
     if (enabled === nextEnabled && ['confirmUnlock', 'autoRelock', 'unlockSeconds', 'confirmPaste', 'relockOnLeave', 'guardEnter']
       .every((key) => settings[key] === next[key])) return;
 

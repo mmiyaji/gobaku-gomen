@@ -12,7 +12,7 @@
 <body>
   <main>
     <header class="page-heading">
-      <img class="extension-icon" src="assets/icons/icon-128.png" width="52" height="52" alt="">
+      <img class="extension-icon" src="assets/icons/icon-128.png" width="60" height="60" alt="">
       <div>
         <h1 data-message="settings_title"></h1>
         <p class="page-subtitle" data-message="settings_subtitle"></p>
@@ -23,6 +23,7 @@
         <section aria-labelledby="sites-title">
           <h2 id="sites-title" data-message="sites"></h2>
           <fieldset aria-labelledby="sites-title" disabled>
+            <label class="setting-row"><span data-message="popup_enabled"></span><input type="checkbox" role="switch" name="enabled"></label>
             <label class="setting-row"><span>Twitch</span><input type="checkbox" role="switch" name="twitchEnabled"></label>
             <label class="setting-row"><span>YouTube Live</span><input type="checkbox" role="switch" name="youtubeEnabled"></label>
             <label class="setting-row"><span data-message="niconico_live"></span><input type="checkbox" role="switch" name="niconicoEnabled"></label>
@@ -69,6 +70,14 @@
         <button type="submit" data-message="save" disabled></button>
       </div>
     </form>
+    <footer class="page-footer">
+      <div class="footer-links">
+        <a href="https://mmiyaji.github.io/gobaku-gomen/terms.html" target="_blank" rel="noopener noreferrer" data-message="footer_terms"></a>
+        <a href="https://mmiyaji.github.io/gobaku-gomen/privacy.html" target="_blank" rel="noopener noreferrer" data-message="footer_privacy"></a>
+        <a href="https://ruhenheim.org/" target="_blank" rel="noopener noreferrer" data-message="footer_author_site"></a>
+      </div>
+      <small>© 2026 mmiyaji</small>
+    </footer>
   </main>
 </body>
 </html>

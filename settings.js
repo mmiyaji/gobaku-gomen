@@ -1,4 +1,5 @@
 const defaultSettings = Object.freeze({
+  enabled: true,
   twitchEnabled: true,
   youtubeEnabled: true,
   niconicoEnabled: true,
