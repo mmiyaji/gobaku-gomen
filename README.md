@@ -2,6 +2,16 @@
 
 Twitch、YouTube Live、ニコニコ生放送、ツイキャス、Kickで配信を見ながら別の作業をしているときに、チャットへの意図しない貼り付けや送信を防ぐChrome拡張機能です。
 
+## スクリーンショット
+
+配信映像、コメント、ユーザー名、サービスのロゴはマスクしています。
+
+| 画面 | 日本語 | English |
+| --- | --- | --- |
+| Twitchのチャットロック | ![Twitchのチャットロック（日本語）](docs/screenshots/twitch-ja-locked.jpg) | ![Twitch chat lock (English)](docs/screenshots/twitch-en-locked.jpg) |
+| YouTube Liveのチャットロック | ![YouTube Liveのチャットロック（日本語）](docs/screenshots/youtube-ja-locked.jpg) | ![YouTube Live chat lock (English)](docs/screenshots/youtube-en-locked.jpg) |
+| 拡張機能の設定 | ![設定画面（日本語）](docs/screenshots/settings-ja.jpg) | ![Extension settings (English)](docs/screenshots/settings-en.jpg) |
+
 ## インストール
 
 1. Chromeのアドレスバーで `chrome://extensions/` を開きます。
