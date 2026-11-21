@@ -1,0 +1,114 @@
+{
+  "extension_name": {
+    "message": "Gobaku Gomen – Live Chat Lock"
+  },
+  "extension_short_name": {
+    "message": "Gobaku Gomen"
+  },
+  "extension_description": {
+    "message": "Lock chat on Twitch, YouTube Live, Niconico Live, TwitCasting, and Kick to prevent accidental messages."
+  },
+  "settings_title": {
+    "message": "Gobaku Gomen settings"
+  },
+  "sites": {
+    "message": "Streaming sites"
+  },
+  "unlock_settings": {
+    "message": "Chat protection"
+  },
+  "confirm_unlock": {
+    "message": "Ask before unlocking"
+  },
+  "auto_relock": {
+    "message": "Relock automatically after unlocking"
+  },
+  "unlock_seconds": {
+    "message": "Inactivity before relocking (seconds)"
+  },
+  "unlock_hint": {
+    "message": "5–600 seconds. Editing your chat message resets the countdown."
+  },
+  "save": {
+    "message": "Save"
+  },
+  "saved": {
+    "message": "Settings saved."
+  },
+  "save_failed": {
+    "message": "Could not save settings. Try again."
+  },
+  "load_failed": {
+    "message": "Could not load settings. Reload the page."
+  },
+  "unlock": {
+    "message": "Unlock chat input"
+  },
+  "lock_now": {
+    "message": "Chat unlocked · Lock now"
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "confirm_timed": {
+    "message": "Chat locks again after $SECONDS$ seconds without typing or editing.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1"
+      }
+    }
+  },
+  "confirm_manual": {
+    "message": "The automatic relock timer is off. Use the button above chat to lock again whenever you need to."
+  },
+  "unlock_chat": {
+    "message": "Unlock"
+  },
+  "time_remaining": {
+    "message": "$SECONDS$s left",
+    "placeholders": {
+      "seconds": {
+        "content": "$1"
+      }
+    }
+  },
+  "composing": {
+    "message": "Composing"
+  },
+  "niconico_live": {
+    "message": "Niconico Live"
+  },
+  "twitcasting": {
+    "message": "TwitCasting"
+  },
+  "confirm_title": {
+    "message": "Unlock chat"
+  },
+  "language_settings": {
+    "message": "Display language"
+  },
+  "language_system": {
+    "message": "System (Chrome language)"
+  },
+  "relock_on_leave": {
+    "message": "Relock when leaving the tab or window"
+  },
+  "confirm_paste": {
+    "message": "Ask before pasting"
+  },
+  "guard_enter": {
+    "message": "Prevent sending with Enter alone"
+  },
+  "guard_enter_hint": {
+    "message": "Use the send button or Ctrl / Cmd + Enter to send."
+  },
+  "paste_title": {
+    "message": "Paste into chat?"
+  },
+  "paste_description": {
+    "message": "This inserts the copied text into the chat input."
+  },
+  "paste_apply": {
+    "message": "Paste"
+  }
+}

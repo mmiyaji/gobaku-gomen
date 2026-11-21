@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="options.css">
+  <script defer src="settings.js"></script>
+  <script defer src="options.js"></script>
+</head>
+<body>
+  <main>
+    <header class="page-heading">
+      <span class="lock-icon" aria-hidden="true"></span>
+      <h1 data-message="settings_title"></h1>
+    </header>
+    <form>
+      <div class="settings-grid">
+        <section aria-labelledby="sites-title">
+          <h2 id="sites-title" data-message="sites"></h2>
+          <fieldset aria-labelledby="sites-title" disabled>
+            <label class="setting-row"><span>Twitch</span><input type="checkbox" role="switch" name="twitchEnabled"></label>
+            <label class="setting-row"><span>YouTube Live</span><input type="checkbox" role="switch" name="youtubeEnabled"></label>
+            <label class="setting-row"><span data-message="niconico_live"></span><input type="checkbox" role="switch" name="niconicoEnabled"></label>
+            <label class="setting-row"><span data-message="twitcasting"></span><input type="checkbox" role="switch" name="twitcastingEnabled"></label>
+            <label class="setting-row"><span>Kick</span><input type="checkbox" role="switch" name="kickEnabled"></label>
+          </fieldset>
+        </section>
+        <section aria-labelledby="unlock-title">
+          <h2 id="unlock-title" data-message="unlock_settings"></h2>
+          <fieldset aria-labelledby="unlock-title" disabled>
+            <label class="setting-row"><span data-message="confirm_unlock"></span><input type="checkbox" role="switch" name="confirmUnlock"></label>
+            <label class="setting-row"><span data-message="auto_relock"></span><input type="checkbox" role="switch" name="autoRelock"></label>
+            <div class="duration">
+              <label class="setting-row">
+                <span data-message="unlock_seconds"></span>
+                <input type="number" name="unlockSeconds" required aria-describedby="unlock-hint">
+              </label>
+              <p id="unlock-hint" data-message="unlock_hint"></p>
+            </div>
+            <label class="setting-row"><span data-message="relock_on_leave"></span><input type="checkbox" role="switch" name="relockOnLeave"></label>
+            <label class="setting-row"><span data-message="confirm_paste"></span><input type="checkbox" role="switch" name="confirmPaste"></label>
+            <label class="setting-row">
+              <span>
+                <span data-message="guard_enter"></span>
+                <small id="guard-enter-hint" data-message="guard_enter_hint"></small>
+              </span>
+              <input type="checkbox" role="switch" name="guardEnter" aria-describedby="guard-enter-hint">
+            </label>
+          </fieldset>
+        </section>
+      </div>
+      <fieldset class="language-settings" disabled>
+        <label class="setting-row">
+          <span data-message="language_settings"></span>
+          <select name="language">
+            <option value="system" data-message="language_system"></option>
+            <option value="en" lang="en">English</option>
+            <option value="ja" lang="ja">日本語</option>
+          </select>
+        </label>
+      </fieldset>
+      <div class="actions">
+        <p role="status"></p>
+        <button type="submit" data-message="save" disabled></button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

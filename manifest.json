@@ -1,0 +1,73 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_extension_name__",
+  "short_name": "__MSG_extension_short_name__",
+  "version": "0.7.1",
+  "description": "__MSG_extension_description__",
+  "icons": {
+    "16": "assets/icons/icon-16.png",
+    "32": "assets/icons/icon-32.png",
+    "48": "assets/icons/icon-48.png",
+    "128": "assets/icons/icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.twitch.tv/*"
+      ],
+      "js": [
+        "settings.js",
+        "chat-lock.js"
+      ],
+      "css": [
+        "chat-lock.css"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "settings.js",
+        "chat-lock.js"
+      ],
+      "css": [
+        "chat-lock.css"
+      ],
+      "run_at": "document_start",
+      "exclude_matches": [
+        "https://www.youtube.com/live_chat_replay*"
+      ],
+      "all_frames": true,
+      "match_origin_as_fallback": true
+    },
+    {
+      "matches": [
+        "https://live.nicovideo.jp/watch/*",
+        "https://twitcasting.tv/*",
+        "https://kick.com/*",
+        "https://www.kick.com/*"
+      ],
+      "js": [
+        "settings.js",
+        "chat-lock.js"
+      ],
+      "css": [
+        "chat-lock.css"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "default_locale": "en",
+  "permissions": [
+    "storage"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "service_worker": "localization.js"
+  }
+}

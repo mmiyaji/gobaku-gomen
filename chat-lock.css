@@ -1,0 +1,159 @@
+:root[data-gobaku-active] [data-a-target="chat-input"]:is(textarea, input, [contenteditable]):not([data-gobaku-unlocked]),
+:root[data-gobaku-active] .chat-input__textarea:has([data-a-target="chat-input"]:is(textarea, input, [contenteditable]):not([data-gobaku-unlocked])),
+:root[data-gobaku-active]:not(:has([data-a-target="chat-input"][data-gobaku-unlocked])) [data-a-target="chat-send-button"],
+:root[data-gobaku-active] yt-live-chat-message-input-renderer:has(#input[contenteditable]:not([contenteditable="false"])):not(:has([data-gobaku-unlocked])),
+:root[data-gobaku-active="niconicoEnabled"] .ga-ns-comment-post-form:has(:is(input, textarea):is(.comment-text-box, [name="comment"])):not(:has([data-gobaku-unlocked])),
+:root[data-gobaku-active="twitcastingEnabled"] form.tw-comment-post:has(textarea.tw-textarea):not(:has([data-gobaku-unlocked])),
+:root[data-gobaku-active="kickEnabled"] #chat-input-wrapper:has(:is(#chat-input, [data-testid="chat-input"], [data-lexical-editor="true"]):is(input, textarea, [contenteditable]:not([contenteditable="false"]))):not(:has([data-gobaku-unlocked])),
+:root[data-gobaku-active="kickEnabled"]:not(:has(#chat-input-wrapper [data-gobaku-unlocked])) #send-message-button {
+  display: none !important;
+}
+
+[data-gobaku-unlock] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  width: calc(100% - 16px);
+  margin-inline: auto;
+  min-height: 3rem;
+  margin-block-end: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid currentColor;
+  border-radius: 0.4rem;
+  background-color: var(--color-background-base, var(--yt-live-chat-background-color, Canvas));
+  color: var(--color-text-base, var(--yt-live-chat-primary-text-color, CanvasText));
+  font: inherit;
+  cursor: pointer;
+}
+
+:root[data-gobaku-active="niconicoEnabled"] [data-gobaku-unlock] {
+  flex: 1 1 0;
+  align-self: center;
+  width: auto;
+  min-width: 0;
+  min-height: 36px;
+  margin: 0;
+  margin-inline-end: 8px;
+  padding: 4px 8px;
+  font-size: 13px;
+  line-height: 1.35;
+  background-color: var(--mono8, #fff);
+  color: var(--mono1, #1a1a1a);
+  border-color: var(--mono6, #e6e6e6);
+}
+
+[data-gobaku-unlock]::before,
+[data-gobaku-confirm] h2::before {
+  content: "";
+  flex: 0 0 1.25em;
+  height: 1.25em;
+  background-color: currentColor;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%225%22%20y%3D%2210%22%20width%3D%2214%22%20height%3D%2211%22%20rx%3D%222%22%2F%3E%3Cpath%20d%3D%22M8%2010V7a4%204%200%200%201%208%200%22%2F%3E%3C%2Fsvg%3E") center / contain no-repeat;
+}
+
+[data-gobaku-unlock]:not([data-gobaku-open])::before,
+[data-gobaku-confirm] h2::before {
+  mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%225%22%20y%3D%2210%22%20width%3D%2214%22%20height%3D%2211%22%20rx%3D%222%22%2F%3E%3Cpath%20d%3D%22M8%2010V7a4%204%200%200%201%208%200v3%22%2F%3E%3C%2Fsvg%3E");
+}
+
+[data-gobaku-countdown] {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+[data-gobaku-unlock]:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: -3px;
+}
+
+[data-gobaku-confirm] {
+  box-sizing: border-box;
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(400px, calc(100% - 32px));
+  height: fit-content;
+  max-height: calc(100% - 32px);
+  overflow: auto;
+  padding: 24px;
+  border: 1px solid color-mix(in srgb, currentColor 19%, transparent);
+  border-radius: 16px;
+  box-shadow: 0 18px 48px rgb(0 0 0 / 32%);
+  background: var(--color-background-base, var(--yt-spec-base-background, var(--yt-live-chat-background-color, Canvas)));
+  color: var(--color-text-base, var(--yt-spec-text-primary, var(--yt-live-chat-primary-text-color, CanvasText)));
+  font: 14px/1.6 system-ui, sans-serif;
+  text-align: start;
+}
+
+[data-gobaku-confirm]::backdrop {
+  background: rgb(0 0 0 / 58%);
+}
+
+[data-gobaku-confirm] form {
+  margin: 0;
+}
+
+[data-gobaku-confirm] h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 8px;
+  color: inherit;
+  font: 700 18px/1.45 system-ui, sans-serif;
+}
+
+[data-gobaku-confirm] h2::before {
+  flex-basis: 20px;
+  height: 20px;
+}
+
+[data-gobaku-confirm] p {
+  margin: 0;
+  color: inherit;
+}
+
+[data-gobaku-actions] {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-block-start: 20px;
+}
+
+[data-gobaku-confirm] button {
+  box-sizing: border-box;
+  min-height: 40px;
+  padding: 6px 14px;
+  border: 1px solid color-mix(in srgb, currentColor 37%, transparent);
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font: 600 14px/1.4 system-ui, sans-serif;
+  cursor: pointer;
+}
+
+[data-gobaku-confirm] button[value="agree"] {
+  border-color: #235acb;
+  background: #235acb;
+  color: #fff;
+}
+
+[data-gobaku-confirm] button:focus-visible {
+  outline: 2px solid #5891fb;
+  outline-offset: 2px;
+}
+
+:root[data-gobaku-active="niconicoEnabled"] [data-gobaku-confirm] {
+  background-color: var(--mono8, #fff);
+  color: var(--mono1, #1a1a1a);
+  border-color: var(--mono6, #e6e6e6);
+}
+
+:root[data-gobaku-active="kickEnabled"] :is([data-gobaku-unlock], [data-gobaku-confirm]) {
+  background-color: var(--edge-color-surface-bg-default, #191b1f);
+  color: var(--edge-color-surface-fg-default, #f5f6f6);
+  border-color: var(--edge-color-surface-fg-nontext, #53575d);
+}

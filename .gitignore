@@ -1,0 +1,9 @@
+/mockups/
+/assets/icon-concepts/
+/assets/gobaku-gomen-icon*.png
+/release/*
+!/release/chrome-web-store/
+/release/chrome-web-store/*
+!/release/chrome-web-store/0.7.1/
+/release/chrome-web-store/0.7.1/*
+!/release/chrome-web-store/0.7.1/privacy.html

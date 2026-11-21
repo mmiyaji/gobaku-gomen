@@ -1,0 +1,114 @@
+{
+  "extension_name": {
+    "message": "誤爆ごめん｜配信チャット誤送信防止"
+  },
+  "extension_short_name": {
+    "message": "誤爆ごめん"
+  },
+  "extension_description": {
+    "message": "Twitch、YouTube Live、ニコニコ生放送、ツイキャス、Kickのチャット入力をロックして誤送信を防ぎます。"
+  },
+  "settings_title": {
+    "message": "誤爆ごめんの設定"
+  },
+  "sites": {
+    "message": "配信サイト"
+  },
+  "unlock_settings": {
+    "message": "チャットの保護"
+  },
+  "confirm_unlock": {
+    "message": "解除する前に確認する"
+  },
+  "auto_relock": {
+    "message": "解除後に自動で再ロックする"
+  },
+  "unlock_seconds": {
+    "message": "入力停止から再ロックまで（秒）"
+  },
+  "unlock_hint": {
+    "message": "5〜600秒。チャットに入力するたびに残り時間が戻ります。"
+  },
+  "save": {
+    "message": "保存"
+  },
+  "saved": {
+    "message": "設定を保存しました。"
+  },
+  "save_failed": {
+    "message": "設定を保存できませんでした。もう一度お試しください。"
+  },
+  "load_failed": {
+    "message": "設定を読み込めませんでした。ページを再読み込みしてください。"
+  },
+  "unlock": {
+    "message": "チャット入力のロックを解除"
+  },
+  "lock_now": {
+    "message": "ロック解除中 · 今すぐロック"
+  },
+  "cancel": {
+    "message": "キャンセル"
+  },
+  "confirm_timed": {
+    "message": "入力が$SECONDS$秒止まると、自動で再ロックします。",
+    "placeholders": {
+      "seconds": {
+        "content": "$1"
+      }
+    }
+  },
+  "confirm_manual": {
+    "message": "自動再ロックのタイマーはオフです。必要なときは、チャット欄の上のボタンですぐに再ロックできます。"
+  },
+  "unlock_chat": {
+    "message": "解除する"
+  },
+  "time_remaining": {
+    "message": "残り$SECONDS$秒",
+    "placeholders": {
+      "seconds": {
+        "content": "$1"
+      }
+    }
+  },
+  "composing": {
+    "message": "変換中"
+  },
+  "niconico_live": {
+    "message": "ニコニコ生放送"
+  },
+  "twitcasting": {
+    "message": "ツイキャス"
+  },
+  "confirm_title": {
+    "message": "チャットのロックを解除"
+  },
+  "language_settings": {
+    "message": "表示言語"
+  },
+  "language_system": {
+    "message": "システム（Chromeに従う）"
+  },
+  "relock_on_leave": {
+    "message": "別タブ・別ウィンドウに移ると再ロックする"
+  },
+  "confirm_paste": {
+    "message": "貼り付ける前に確認する"
+  },
+  "guard_enter": {
+    "message": "Enter単体での送信を防ぐ"
+  },
+  "guard_enter_hint": {
+    "message": "送信ボタンまたはCtrl／⌘＋Enterで送信できます。"
+  },
+  "paste_title": {
+    "message": "チャットに貼り付けますか？"
+  },
+  "paste_description": {
+    "message": "コピーしたテキストをチャットの入力欄に入れます。"
+  },
+  "paste_apply": {
+    "message": "貼り付ける"
+  }
+}
