@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="options.css">
+  <link rel="stylesheet" href="popup.css">
+  <script defer src="settings.js"></script>
+  <script defer src="popup.js"></script>
+</head>
+<body>
+  <main>
+    <header class="popup-heading">
+      <img src="assets/icons/icon-48.png" width="40" height="40" alt="">
+      <div>
+        <h1 data-message="extension_short_name"></h1>
+        <p data-message="settings_subtitle"></p>
+      </div>
+    </header>
+    <label class="setting-row">
+      <span data-message="popup_enabled"></span>
+      <input id="enabled" type="checkbox" role="switch" disabled>
+    </label>
+    <button id="details" type="button" data-message="popup_options"></button>
+    <p id="status" role="status"></p>
+  </main>
+</body>
+</html>

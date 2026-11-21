@@ -18,7 +18,9 @@
   const fieldsets = form.querySelectorAll('fieldset');
   fields.unlockSeconds.min = minUnlockSeconds;
   fields.unlockSeconds.max = maxUnlockSeconds;
-  const toggles = Object.keys(defaultSettings).filter((key) => typeof defaultSettings[key] === 'boolean');
+  const toggles = Object.keys(defaultSettings).filter(
+    (key) => typeof defaultSettings[key] === 'boolean' && fields.namedItem(key)
+  );
   let savedSettings;
 
   function setBusy(busy) {
@@ -32,6 +34,13 @@
 
   fields.autoRelock.addEventListener('change', updateTimerField);
   form.addEventListener('input', () => { status.textContent = ''; });
+
+  chrome.storage.local.onChanged.addListener(({ enabled }) => {
+    if (!enabled || !savedSettings) return;
+    const locallyEdited = fields.enabled.checked !== savedSettings.enabled;
+    savedSettings.enabled = enabled.newValue !== false;
+    if (!locallyEdited) fields.enabled.checked = savedSettings.enabled;
+  });
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -59,12 +68,13 @@
 
   chrome.storage.local.get(defaultSettings).then(async (settings) => {
     savedSettings = settings;
+    settings.enabled = settings.enabled !== false;
     fields.language.value = ['en', 'ja'].includes(settings.language) ? settings.language : 'system';
-    copy = await loadCopy(fields.language.value);
-    renderCopy();
     for (const key of toggles) {
       fields[key].checked = settings[key];
     }
+    copy = await loadCopy(fields.language.value);
+    renderCopy();
     if (!isValidUnlockTime(settings.unlockSeconds)) settings.unlockSeconds = defaultSettings.unlockSeconds;
     fields.unlockSeconds.value = settings.unlockSeconds;
     updateTimerField();

@@ -14,6 +14,21 @@
   "settings_subtitle": {
     "message": "配信チャット誤送信防止"
   },
+  "popup_enabled": {
+    "message": "チャット保護を有効にする"
+  },
+  "popup_options": {
+    "message": "詳細設定を開く"
+  },
+  "footer_terms": {
+    "message": "利用規約"
+  },
+  "footer_privacy": {
+    "message": "プライバシーポリシー"
+  },
+  "footer_author_site": {
+    "message": "作者サイト"
+  },
   "sites": {
     "message": "配信サイト"
   },
@@ -109,9 +124,9 @@
     "message": "チャットに貼り付けますか？"
   },
   "paste_description": {
-    "message": "コピーしたテキストをチャットの入力欄に入れます。"
+    "message": "許可したら、10秒以内にこの入力欄でもう一度貼り付けてください。拡張機能はコピー内容を読み取りません。"
   },
   "paste_apply": {
-    "message": "貼り付ける"
+    "message": "次の貼り付けを許可"
   }
 }

@@ -1,0 +1,41 @@
+body {
+  width: 300px;
+}
+
+main {
+  padding: 16px;
+}
+
+.popup-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-block-end: 14px;
+}
+
+.popup-heading h1 {
+  font-size: 18px;
+}
+
+.popup-heading p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.setting-row {
+  min-height: 48px;
+  padding-inline: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+}
+
+#details {
+  width: 100%;
+  margin-block-start: 12px;
+}
+
+#status:not(:empty) {
+  margin-block-start: 8px;
+  color: var(--muted);
+}

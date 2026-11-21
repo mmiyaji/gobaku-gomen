@@ -209,9 +209,41 @@ button:enabled:hover {
   background: var(--accent-hover);
 }
 
-:where(input, select, button):focus-visible {
+:where(input, select, button, a):focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 3px;
+}
+
+.page-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin-block-start: 20px;
+  padding-block-start: 12px;
+  border-block-start: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.page-footer small {
+  font-size: inherit;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+}
+
+.footer-links a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+.footer-links a:hover {
+  color: var(--focus);
 }
 
 @media (max-width: 670px) {
