@@ -49,34 +49,13 @@ h1 {
   line-height: 1.3;
 }
 
-.lock-icon {
-  position: relative;
-  display: grid;
-  justify-items: center;
-  align-content: center;
-  flex: 0 0 40px;
-  height: 40px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: var(--panel);
-  color: var(--focus);
+.extension-icon {
+  flex: none;
 }
 
-.lock-icon::before {
-  content: "";
-  width: 8px;
-  height: 7px;
-  border: 2px solid currentColor;
-  border-bottom: 0;
-  border-radius: 8px 8px 0 0;
-}
-
-.lock-icon::after {
-  content: "";
-  width: 16px;
-  height: 12px;
-  border: 2px solid currentColor;
-  border-radius: 3px;
+.page-subtitle {
+  margin-block-start: 2px;
+  color: var(--muted);
 }
 
 .settings-grid {

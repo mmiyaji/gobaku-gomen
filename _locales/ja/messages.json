@@ -11,6 +11,9 @@
   "settings_title": {
     "message": "誤爆ごめんの設定"
   },
+  "settings_subtitle": {
+    "message": "配信チャット誤送信防止"
+  },
   "sites": {
     "message": "配信サイト"
   },

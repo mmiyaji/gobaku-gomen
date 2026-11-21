@@ -11,6 +11,9 @@
   "settings_title": {
     "message": "Gobaku Gomen settings"
   },
+  "settings_subtitle": {
+    "message": "Live Chat Lock"
+  },
   "sites": {
     "message": "Streaming sites"
   },
