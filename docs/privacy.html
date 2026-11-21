@@ -8,8 +8,8 @@
 <h2>端末内で処理する情報</h2>
 <ul>
 <li>拡張機能は、対応ページのチャット入力欄、送信ボタン、ページの状態を確認し、ロックや再ロックを適用します。</li>
-<li>貼り付け確認がオンのときは、ユーザーが保護対象の入力欄に貼り付けを行った際に、そのテキストを一時的にブラウザー内で扱います。同意した場合だけ入力欄に挿入します。貼り付け内容を履歴として保存しません。</li>
-<li>各サイトの有効・無効、解除時の確認、再ロックの条件と時間、送信キーの保護、表示言語などの設定は、そのブラウザープロファイルの拡張機能のローカルストレージに保存します。</li>
+<li>貼り付け確認がオンのときは、ユーザーが保護対象の入力欄に貼り付けを行った際に、最初の操作を止めて確認を表示します。許可後に繰り返す貼り付けはブラウザーが処理します。拡張機能はクリップボードの内容を読み取ったり保存したりしません。</li>
+<li>全体と各サイトの有効・無効、解除時の確認、再ロックの条件と時間、送信キーの保護、表示言語などの設定は、そのブラウザープロファイルの拡張機能のローカルストレージに保存します。</li>
 </ul>
 <h2>外部への送信・共有</h2>
 <p>拡張機能は、チャットの下書き、貼り付け内容、閲覧履歴、設定を開発者のサーバーに送信せず、広告やアクセス解析を行いません。これらの情報を販売したり第三者へ提供したりしません。ユーザーがチャットを送信した場合は、配信サービスの通常の送信機能と、そのサービスのプライバシーポリシーが適用されます。</p>
@@ -19,7 +19,7 @@
 <section id="english" lang="en">
 <h2>Privacy policy — Gobaku Gomen</h2>
 <p>Gobaku Gomen helps prevent accidental typing, pasting and sending in live chat on Twitch, YouTube Live, Niconico Live, TwitCasting, and Kick.</p>
-<p>The extension inspects chat inputs, send controls and page state on supported pages to apply the lock. When paste confirmation is enabled, it temporarily handles the text from a paste initiated by the user in a protected chat field, and inserts it only after approval. It keeps no clipboard history. Site toggles, confirmation and relock settings, send-key protection, and language preferences are stored locally in the browser profile. These settings are removed when the extension is uninstalled.</p>
+<p>The extension inspects chat inputs, send controls and page state on supported pages to apply the lock. When paste confirmation is enabled, it blocks the first paste attempt and asks for approval. The browser handles the repeated paste after approval. The extension does not read or store clipboard contents. Global and per-site toggles, confirmation and relock settings, send-key protection, and language preferences are stored locally in the browser profile. These settings are removed when the extension is uninstalled.</p>
 <p>The extension does not send drafts, pasted text, browsing history or preferences to developer servers. It does not use ads or analytics and does not sell or share this data. A chat message the user chooses to send is handled by the livestream service under its own privacy policy.</p>
 <p>The extension uses the information it handles only to prevent accidental chat submissions and complies with the Chrome Web Store User Data Policy, including the Limited Use requirements. For privacy questions, use the developer contact listed in the Chrome Web Store.</p>
 </section>
